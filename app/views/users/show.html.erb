@@ -1,2 +1,17 @@
 <h1>こんにちは、<%= current_user.username %>様</h1>
-<p>ユーザー専用ページ</p>
+<h3>ユーザー情報</h3>
+<div class="profile">
+    <p>名前：<%= @user.username %></p>
+    <p>年齢：<%= @user.age %></p>
+    <p>性別：<%= @user.gender %></p>
+    <p>都道府県：<%= @user.address %></p>
+    <p>画像：<img src=<%= @user.image %> class="profile_image"></p>
+    <p>職業：<%= @user.job %></p>
+    <p>自己紹介：<%= @user.self_introduction %></p>
+</div> 
+
+
+<h3>アカウントを失効する</h3>
+
+<%= button_to "アカウントキャンセル", user_registration_path, data: { confirm: "Are you sure?" }, method: :delete %>
+
